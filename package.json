@@ -11,7 +11,7 @@
         "test:all": "npm run test test/**/*.spec.ts test/**/**/*.spec.ts test/**/**/**/*.spec.ts"
     },
     "dependencies": {
-        "@types/node": "^14.14.10",
+        "@dfgpublicidade/node-app-module": "git+https://github.com/dfg-publicidade/node-app-module.git",
         "moment-timezone": "^0.5.32"
     },
     "devDependencies": {
