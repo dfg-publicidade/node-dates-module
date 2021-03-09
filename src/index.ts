@@ -9,39 +9,27 @@ class Dates {
     }
 
     public static tomorrow(): Date {
-        const m: any = moment.tz(process.env.TZ).add(1, 'days');
-
-        return m.toDate();
+        return moment.tz(process.env.TZ).add(1, 'days').toDate();
     }
 
-    public static fromDate(data: Date, disableTz?: boolean): string {
-        const m: any = disableTz ? moment(data) : moment(data).tz(process.env.TZ);
-
-        return m.format('DD/MM/YYYY');
+    public static fromDate(data: Date): string {
+        return moment(data).tz(process.env.TZ).format('DD/MM/YYYY');
     }
 
-    public static fromTime(data: Date, disableTz?: boolean): string {
-        const m: any = disableTz ? moment(data) : moment(data).tz(process.env.TZ);
-
-        return m.format('HH:mm');
+    public static fromTime(data: Date): string {
+        return moment(data).tz(process.env.TZ).format('HH:mm');
     }
 
-    public static fromDateTime(data: Date, disableTz?: boolean): string {
-        const m: any = disableTz ? moment(data) : moment(data).tz(process.env.TZ);
-
-        return m.format('DD/MM/YYYY HH:mm');
+    public static fromDateTime(data: Date): string {
+        return moment(data).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
     }
 
-    public static fromDbDate(data: Date, disableTz?: boolean): string {
-        const m: any = disableTz ? moment(data) : moment(data).tz(process.env.TZ);
-
-        return m.format('YYYY-MM-DD');
+    public static fromDbDate(data: Date): string {
+        return moment(data).tz(process.env.TZ).format('YYYY-MM-DD');
     }
 
-    public static fromDbDateTime(data: Date, disableTz?: boolean): string {
-        const m: any = disableTz ? moment(data) : moment(data).tz(process.env.TZ);
-
-        return m.format('YYYY-MM-DD HH:mm');
+    public static fromDbDateTime(data: Date): string {
+        return moment(data).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
     }
 
     public static toDate(data: string): Date {

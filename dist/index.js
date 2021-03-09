@@ -11,28 +11,22 @@ class Dates {
         return m.toDate();
     }
     static tomorrow() {
-        const m = moment_timezone_1.default.tz(process.env.TZ).add(1, 'days');
-        return m.toDate();
+        return moment_timezone_1.default.tz(process.env.TZ).add(1, 'days').toDate();
     }
-    static fromDate(data, disableTz) {
-        const m = disableTz ? moment_timezone_1.default(data) : moment_timezone_1.default(data).tz(process.env.TZ);
-        return m.format('DD/MM/YYYY');
+    static fromDate(data) {
+        return moment_timezone_1.default(data).tz(process.env.TZ).format('DD/MM/YYYY');
     }
-    static fromTime(data, disableTz) {
-        const m = disableTz ? moment_timezone_1.default(data) : moment_timezone_1.default(data).tz(process.env.TZ);
-        return m.format('HH:mm');
+    static fromTime(data) {
+        return moment_timezone_1.default(data).tz(process.env.TZ).format('HH:mm');
     }
-    static fromDateTime(data, disableTz) {
-        const m = disableTz ? moment_timezone_1.default(data) : moment_timezone_1.default(data).tz(process.env.TZ);
-        return m.format('DD/MM/YYYY HH:mm');
+    static fromDateTime(data) {
+        return moment_timezone_1.default(data).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
     }
-    static fromDbDate(data, disableTz) {
-        const m = disableTz ? moment_timezone_1.default(data) : moment_timezone_1.default(data).tz(process.env.TZ);
-        return m.format('YYYY-MM-DD');
+    static fromDbDate(data) {
+        return moment_timezone_1.default(data).tz(process.env.TZ).format('YYYY-MM-DD');
     }
-    static fromDbDateTime(data, disableTz) {
-        const m = disableTz ? moment_timezone_1.default(data) : moment_timezone_1.default(data).tz(process.env.TZ);
-        return m.format('YYYY-MM-DD HH:mm');
+    static fromDbDateTime(data) {
+        return moment_timezone_1.default(data).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
     }
     static toDate(data) {
         const m = moment_timezone_1.default.tz(data, 'DD/MM/YYYY', process.env.TZ);
