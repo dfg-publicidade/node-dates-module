@@ -9,7 +9,7 @@ class Dates {
     }
 
     public static tomorrow(): Date {
-        return moment.tz(process.env.TZ).add(1, 'days').toDate();
+        return moment.tz(process.env.TZ).add(1, 'days').startOf('day').toDate();
     }
 
     public static fromDate(data: Date): string {

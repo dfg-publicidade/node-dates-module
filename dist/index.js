@@ -11,7 +11,7 @@ class Dates {
         return m.toDate();
     }
     static tomorrow() {
-        return moment_timezone_1.default.tz(process.env.TZ).add(1, 'days').toDate();
+        return moment_timezone_1.default.tz(process.env.TZ).add(1, 'days').startOf('day').toDate();
     }
     static fromDate(data) {
         return moment_timezone_1.default(data).tz(process.env.TZ).format('DD/MM/YYYY');
