@@ -39,7 +39,7 @@ describe('index.ts', (): void => {
         testTime.setMilliseconds(0);
     });
 
-    it('now', async (): Promise<void> => {
+    it('1. now', async (): Promise<void> => {
         const now: Date = Dates.now();
         const newDate: Date = new Date();
 
@@ -49,7 +49,7 @@ describe('index.ts', (): void => {
         expect(now.toString()).to.be.equal(newDate.toString());
     });
 
-    it('tomorrow', async (): Promise<void> => {
+    it('2. tomorrow', async (): Promise<void> => {
         const now: Date = Dates.tomorrow();
         const newDate: Date = new Date();
 
@@ -62,47 +62,47 @@ describe('index.ts', (): void => {
         expect(now.getTime() - newDate.getTime()).to.be.equal(24 * 60 * 60 * 1000);
     });
 
-    it('fromDate', async (): Promise<void> => {
+    it('3. fromDate', async (): Promise<void> => {
         expect(Dates.fromDate(testDate)).to.be.eq('01/01/2021');
     });
 
-    it('fromTime', async (): Promise<void> => {
+    it('4. fromTime', async (): Promise<void> => {
         expect(Dates.fromTime(testTime)).to.be.eq('14:00');
     });
 
-    it('fromDateTime', async (): Promise<void> => {
+    it('5. fromDateTime', async (): Promise<void> => {
         expect(Dates.fromDateTime(testDateTime)).to.be.eq('01/01/2021 14:00');
     });
 
-    it('fromDbDate', async (): Promise<void> => {
+    it('6. fromDbDate', async (): Promise<void> => {
         expect(Dates.fromDbDate(testDate)).to.be.eq('2021-01-01');
     });
 
-    it('fromDbDateTime', async (): Promise<void> => {
+    it('7. fromDbDateTime', async (): Promise<void> => {
         expect(Dates.fromDbDateTime(testDateTime)).to.be.eq('2021-01-01 14:00');
     });
 
-    it('toDate', async (): Promise<void> => {
+    it('8. toDate', async (): Promise<void> => {
         expect(Dates.toDate('01/01/2021').toString()).to.be.eq(testDate.toString());
         expect(Dates.toDate('invalid')).to.be.null;
     });
 
-    it('toTime', async (): Promise<void> => {
+    it('9. toTime', async (): Promise<void> => {
         expect(Dates.toTime('14:00').toString()).to.be.eq(testTime.toString());
         expect(Dates.toTime('invalid')).to.be.null;
     });
 
-    it('toDateTime', async (): Promise<void> => {
+    it('10. toDateTime', async (): Promise<void> => {
         expect(Dates.toDateTime('01/01/2021 14:00').toString()).to.be.eq(testDateTime.toString());
         expect(Dates.toDateTime('invalid')).to.be.null;
     });
 
-    it('toDbDate', async (): Promise<void> => {
+    it('11. toDbDate', async (): Promise<void> => {
         expect(Dates.toDbDate('2021-01-01').toString()).to.be.eq(testDate.toString());
         expect(Dates.toDbDate('invalid')).to.be.null;
     });
 
-    it('toDbDateTime', async (): Promise<void> => {
+    it('12. toDbDateTime', async (): Promise<void> => {
         expect(Dates.toDbDateTime('2021-01-01 14:00').toString()).to.be.eq(testDateTime.toString());
         expect(Dates.toDbDateTime('invalid')).to.be.null;
     });
