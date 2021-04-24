@@ -1,15 +1,14 @@
 declare class Dates {
     static now(): Date;
     static tomorrow(): Date;
-    static fromDate(data: Date): string;
-    static fromTime(data: Date): string;
-    static fromDateTime(data: Date): string;
-    static fromDbDate(data: Date): string;
-    static fromDbDateTime(data: Date): string;
-    static toDate(data: string): Date;
-    static toTime(data: string): Date;
-    static toDateTime(data: string): Date;
-    static toDbDate(data: string): Date;
-    static toDbDateTime(data: string): Date;
+    static fromDate(date: Date): string;
+    static fromTime(date: Date): string;
+    static fromDateTime(date: Date): string;
+    static fromDbDate(date: Date): string;
+    static fromDbDateTime(date: Date): string;
+    static toDate(date: string): Date;
+    static toDateTime(date: string): Date;
+    static toDbDate(date: string): Date;
+    static toDbDateTime(date: string): Date;
 }
 export default Dates;

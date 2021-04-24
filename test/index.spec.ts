@@ -14,7 +14,6 @@ describe('index.ts', (): void => {
         testDate.setFullYear(2021);
         testDate.setMonth(0);
         testDate.setDate(1);
-        // eslint-disable-next-line no-magic-numbers
         testDate.setHours(0);
         testDate.setMinutes(0);
         testDate.setSeconds(0);
@@ -46,7 +45,7 @@ describe('index.ts', (): void => {
         now.setMilliseconds(0);
         newDate.setMilliseconds(0);
 
-        expect(now.toString()).to.be.equal(newDate.toString());
+        expect(now).to.be.deep.equal(newDate);
     });
 
     it('2. tomorrow', async (): Promise<void> => {
@@ -83,27 +82,22 @@ describe('index.ts', (): void => {
     });
 
     it('8. toDate', async (): Promise<void> => {
-        expect(Dates.toDate('01/01/2021').toString()).to.be.eq(testDate.toString());
+        expect(Dates.toDate('01/01/2021')).to.be.deep.eq(testDate);
         expect(Dates.toDate('invalid')).to.be.null;
     });
 
-    it('9. toTime', async (): Promise<void> => {
-        expect(Dates.toTime('14:00').toString()).to.be.eq(testTime.toString());
-        expect(Dates.toTime('invalid')).to.be.null;
-    });
-
-    it('10. toDateTime', async (): Promise<void> => {
-        expect(Dates.toDateTime('01/01/2021 14:00').toString()).to.be.eq(testDateTime.toString());
+    it('9. toDateTime', async (): Promise<void> => {
+        expect(Dates.toDateTime('01/01/2021 14:00')).to.be.deep.eq(testDateTime);
         expect(Dates.toDateTime('invalid')).to.be.null;
     });
 
-    it('11. toDbDate', async (): Promise<void> => {
-        expect(Dates.toDbDate('2021-01-01').toString()).to.be.eq(testDate.toString());
+    it('10. toDbDate', async (): Promise<void> => {
+        expect(Dates.toDbDate('2021-01-01')).to.be.deep.eq(testDate);
         expect(Dates.toDbDate('invalid')).to.be.null;
     });
 
-    it('12. toDbDateTime', async (): Promise<void> => {
-        expect(Dates.toDbDateTime('2021-01-01 14:00').toString()).to.be.eq(testDateTime.toString());
+    it('11. toDbDateTime', async (): Promise<void> => {
+        expect(Dates.toDbDateTime('2021-01-01 14:00')).to.be.deep.eq(testDateTime);
         expect(Dates.toDbDateTime('invalid')).to.be.null;
     });
 

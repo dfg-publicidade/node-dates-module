@@ -12,56 +12,49 @@ class Dates {
         return moment.tz(process.env.TZ).add(1, 'days').startOf('day').toDate();
     }
 
-    public static fromDate(data: Date): string {
-        return moment(data).tz(process.env.TZ).format('DD/MM/YYYY');
+    public static fromDate(date: Date): string {
+        return moment(date).tz(process.env.TZ).format('DD/MM/YYYY');
     }
 
-    public static fromTime(data: Date): string {
-        return moment(data).tz(process.env.TZ).format('HH:mm');
+    public static fromTime(date: Date): string {
+        return moment(date).tz(process.env.TZ).format('HH:mm');
     }
 
-    public static fromDateTime(data: Date): string {
-        return moment(data).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
+    public static fromDateTime(date: Date): string {
+        return moment(date).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
     }
 
-    public static fromDbDate(data: Date): string {
-        return moment(data).tz(process.env.TZ).format('YYYY-MM-DD');
+    public static fromDbDate(date: Date): string {
+        return moment(date).tz(process.env.TZ).format('YYYY-MM-DD');
     }
 
-    public static fromDbDateTime(data: Date): string {
-        return moment(data).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
+    public static fromDbDateTime(date: Date): string {
+        return moment(date).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
     }
 
-    public static toDate(data: string): Date {
-        const m: any = moment.tz(data, 'DD/MM/YYYY', process.env.TZ);
+    public static toDate(date: string): Date {
+        const m: any = moment.tz(date, 'DD/MM/YYYY', process.env.TZ);
 
         // eslint-disable-next-line no-null/no-null
         return m.isValid() ? m.toDate() : null;
     }
 
-    public static toTime(data: string): Date {
-        const m: any = moment.tz(data, 'HH:mm', process.env.TZ);
+    public static toDateTime(date: string): Date {
+        const m: any = moment.tz(date, 'DD/MM/YYYY HH:mm', process.env.TZ);
 
         // eslint-disable-next-line no-null/no-null
         return m.isValid() ? m.toDate() : null;
     }
 
-    public static toDateTime(data: string): Date {
-        const m: any = moment.tz(data, 'DD/MM/YYYY HH:mm', process.env.TZ);
+    public static toDbDate(date: string): Date {
+        const m: any = moment.tz(date, 'YYYY-MM-DD', process.env.TZ);
 
         // eslint-disable-next-line no-null/no-null
         return m.isValid() ? m.toDate() : null;
     }
 
-    public static toDbDate(data: string): Date {
-        const m: any = moment.tz(data, 'YYYY-MM-DD', process.env.TZ);
-
-        // eslint-disable-next-line no-null/no-null
-        return m.isValid() ? m.toDate() : null;
-    }
-
-    public static toDbDateTime(data: string): Date {
-        const m: any = moment.tz(data, 'YYYY-MM-DD HH:mm', process.env.TZ);
+    public static toDbDateTime(date: string): Date {
+        const m: any = moment.tz(date, 'YYYY-MM-DD HH:mm', process.env.TZ);
 
         // eslint-disable-next-line no-null/no-null
         return m.isValid() ? m.toDate() : null;
