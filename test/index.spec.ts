@@ -83,22 +83,22 @@ describe('index.ts', (): void => {
 
     it('8. toDate', async (): Promise<void> => {
         expect(Dates.toDate('01/01/2021')).to.be.deep.eq(testDate);
-        expect(Dates.toDate('invalid')).to.be.undefined;
+        expect(Dates.toDate('invalid')).to.be.null;
     });
 
     it('9. toDateTime', async (): Promise<void> => {
         expect(Dates.toDateTime('01/01/2021 14:00')).to.be.deep.eq(testDateTime);
-        expect(Dates.toDateTime('invalid')).to.be.undefined;
+        expect(Dates.toDateTime('invalid')).to.be.null;
     });
 
     it('10. toDbDate', async (): Promise<void> => {
         expect(Dates.toDbDate('2021-01-01')).to.be.deep.eq(testDate);
-        expect(Dates.toDbDate('invalid')).to.be.undefined;
+        expect(Dates.toDbDate('invalid')).to.be.null;
     });
 
     it('11. toDbDateTime', async (): Promise<void> => {
         expect(Dates.toDbDateTime('2021-01-01 14:00')).to.be.deep.eq(testDateTime);
-        expect(Dates.toDbDateTime('invalid')).to.be.undefined;
+        expect(Dates.toDbDateTime('invalid')).to.be.null;
     });
 
 });
