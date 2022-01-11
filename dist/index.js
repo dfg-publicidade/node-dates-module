@@ -14,19 +14,19 @@ class Dates {
         return moment_timezone_1.default.tz(process.env.TZ).add(1, 'days').startOf('day').toDate();
     }
     static fromDate(date) {
-        return moment_timezone_1.default(date).tz(process.env.TZ).format('DD/MM/YYYY');
+        return (0, moment_timezone_1.default)(date).tz(process.env.TZ).format('DD/MM/YYYY');
     }
     static fromTime(date) {
-        return moment_timezone_1.default(date).tz(process.env.TZ).format('HH:mm');
+        return (0, moment_timezone_1.default)(date).tz(process.env.TZ).format('HH:mm');
     }
     static fromDateTime(date) {
-        return moment_timezone_1.default(date).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
+        return (0, moment_timezone_1.default)(date).tz(process.env.TZ).format('DD/MM/YYYY HH:mm');
     }
     static fromDbDate(date) {
-        return moment_timezone_1.default(date).tz(process.env.TZ).format('YYYY-MM-DD');
+        return (0, moment_timezone_1.default)(date).tz(process.env.TZ).format('YYYY-MM-DD');
     }
     static fromDbDateTime(date) {
-        return moment_timezone_1.default(date).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
+        return (0, moment_timezone_1.default)(date).tz(process.env.TZ).format('YYYY-MM-DD HH:mm');
     }
     static toDate(date) {
         const m = moment_timezone_1.default.tz(date, 'DD/MM/YYYY', process.env.TZ);
